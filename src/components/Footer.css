@@ -1,0 +1,41 @@
+.footer {
+  position: relative;
+  background-color: #444;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 22px;
+}
+
+.footer span {
+  color: #fff;
+}
+
+.blue {
+  color: #61dafb;
+}
+
+.blue span {
+  color: #61dafb;  
+}
+.white {
+  color: #fff;
+}
+
+.group {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.footer a {
+  cursor: pointer;
+  transition: all .3s ease-in;
+  border-bottom: 2px solid transparent;
+  opacity: 1;
+  color: #fff;
+}
+
+.footer a:hover {
+  opacity: 1;
+  border-bottom: 2px solid #61dafb;
+}

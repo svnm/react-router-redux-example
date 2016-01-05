@@ -1,0 +1,152 @@
+.header {
+  background-color: #fff;
+  padding-bottom: 50px;
+}
+
+.description {
+  padding-left: 4%;
+  padding-right: 4%;
+  font-size: 32px;
+}
+
+.description span{
+  color: #808080;
+  font-size: 32px;
+}
+
+.header a {
+  cursor: pointer;
+  transition: all .3s ease-in;
+  border-bottom: 2px solid transparent;
+}
+
+.header a:hover {
+  opacity: 1;
+  border-bottom: 2px solid #61dafb;
+}
+
+.dark {
+  color: #444;
+  background-color: #61dafb;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.light {
+  color: #61dafb;
+  background-color: #444;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+/* react spinning logo */
+
+
+.wrapper {
+  height: 300px;
+}
+
+.inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 50%;
+  border: 3px solid #61dafb;
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.innerdot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #61dafb;
+  margin-top: -15px;
+  margin-left: -15px;
+}
+
+.react {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 50px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  -webkit-animation: spin 10s linear infinite;
+          animation: spin 10s linear infinite;
+  z-index: 11;
+}
+
+.react:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 50%;
+  border: 3px solid #61dafb;
+  -webkit-transform: rotate(-120deg);
+  -ms-transform: rotate(-120deg);
+  transform: rotate(-120deg);
+}
+
+.react:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 50%;
+  border: 3px solid #61dafb;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
