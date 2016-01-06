@@ -6,20 +6,18 @@ Redux Simple Router Example
 * **react** `0.14.2`
 * **redux** `3.0.4`
 * **redux logger**
-* routing with **redux simple router** / **react router**
+* **redux simple router** / **react router** for routing
 * **babel** `6.1.0`
 * **webpack** `1.12.6`
 * **webpack dev server**
 * **express** `4.13.3``
 * **css modules** / **react-css-modules**
-* **post-css** autoprefixer
+* **post-css** / **autoprefixer**
 * **isomorphic-fetch** for api calls
 
-and most importantly
+and most importantly **Nothing else...**
 
-**Nothing else...**
-
-okay technically **marked** for showing some markdown, **request** to make an API call and a few awesomely simple css modules like **css-module-block-loader**
+okay technically **marked** for showing some markdown and **request** to make an API call
 
 ## Run it
 
