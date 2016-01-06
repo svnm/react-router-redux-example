@@ -3,23 +3,23 @@ Redux Simple Router Example
 
 ## Dependencies
 
-* react
-* redux
-* redux dev tools
-* routing with redux simple router/ react router
-* babel 6
-* webpack
-* webpack dev server
-* express
-* css modules/ react-css-modules
-* post-css autoprefixer
-* isomorphic-fetch for api calls
+* **react** `0.14.2`
+* **redux** `3.0.4`
+* **redux logger**
+* routing with **redux simple router** / **react router**
+* **babel** `6.1.0`
+* **webpack** `1.12.6`
+* **webpack dev server**
+* **express** `4.13.3``
+* **css modules** / **react-css-modules**
+* **post-css** autoprefixer
+* **isomorphic-fetch** for api calls
 
 and most importantly
 
 **Nothing else...**
 
-okay technically `marked` for showing markdown, `request` to make an API call to get the state and a few awesomely simple css modules like `css-module-block-loader`
+okay technically **marked** for showing some markdown, **request** to make an API call and a few awesomely simple css modules like **css-module-block-loader**
 
 ## Run it
 
@@ -29,7 +29,7 @@ npm start
 open http://127.0.0.1:3000
 ```
 
-![](https://github.com/StevenIseki/redux-simple-router-example/blob/master/redux-simple-router-example/screenshot.png)
+![](https://raw.githubusercontent.com/StevenIseki/redux-simple-router-example/master/screenshot.png)
 
 ## Function components or react components
 
