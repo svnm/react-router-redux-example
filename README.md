@@ -15,9 +15,7 @@ Redux Simple Router Example
 * **post-css** / **autoprefixer**
 * **isomorphic-fetch** for api calls
 
-and most importantly **Nothing else...**
-
-okay technically **marked** for showing some markdown and **request** to make an API call
+and most importantly **Nothing else...** okay **marked** for showing some markdown and **request** to make an API call
 
 ## Run it
 
