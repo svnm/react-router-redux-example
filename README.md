@@ -33,7 +33,7 @@ For this example I mixed and matched between using functions and react component
 
 e.g. [Footer](https://github.com/StevenIseki/redux-simple-router-example/blob/master/src/components/Footer.js) is a react component, [Header](https://github.com/StevenIseki/redux-simple-router-example/blob/master/src/components/Header.js) is just a function. 
 
-This was just to show the difference in the approach. In a real app you might have a consistent approach maybe all components are functions, and containers are react components, or maybe all components are react components to make use of react-css-modules for styleNames... It is up to you, you can mix and match like I did in the example if you like I guess too.
+This was just to show the difference in the approach. In a real app you might have a consistent approach maybe all components are functions, and containers are react components, or maybe all components are react components to make use of react-css-modules... It is up to you, you can mix and match like I did in the example if you like I guess too.
 
 ![](https://raw.githubusercontent.com/StevenIseki/redux-simple-router-example/master/screenshot.png)
 
