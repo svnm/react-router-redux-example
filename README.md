@@ -6,7 +6,7 @@ Redux Simple Router Example
 * **react** `0.14.2`
 * **redux** `3.0.4`
 * **redux logger**
-* **redux simple router** / **react router** for routing
+* **redux simple router** / **react router**
 * **babel** `6.1.0`
 * **webpack** `1.12.6`
 * **webpack dev server**
