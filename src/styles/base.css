@@ -1,0 +1,121 @@
+html {
+  color: #444;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+}
+
+p, h1, h2, h3, h4, h5, span, li {
+  color: #444;
+  font-weight: normal;
+}
+
+pre {
+  padding: 10px;
+}
+
+pre, code {
+  background-color: #fafafa;
+  color: #444;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+a:hover {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+/* base font sizes */
+/* mobile first */
+
+ul{
+     list-style:none;
+}
+
+p, li, a {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: normal;
+}
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+}
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+    p, li, a {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    p, li, a {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 36px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    p, li, a {
+        font-size: 26px;
+    }
+    h3 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h1 {
+        font-size: 44px;
+    }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    p, li, a {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 44px;
+    }
+    h1 {
+        font-size: 48px;
+    }
+}

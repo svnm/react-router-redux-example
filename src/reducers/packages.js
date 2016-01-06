@@ -12,12 +12,15 @@ function update(state = initialState, action) {
 
 		case constants.RECEIVE_PACKAGE:
 			console.log(action.package)			
-			return { selectedPackage: action.package, isFetching: false }
+			return { 
+				npmPackages: state.npmPackages, 
+				selectedPackage: action.package, 
+				isFetching: false 
+			}
 
 		case constants.RECEIVE_PACKAGES:
 			console.log(action.packages)
 			const npmPackages = []
-
 			/* loop through and parse the npm packages */
 			action.packages.rows.map(function (p, i) {
 				npmPackages.push(
@@ -29,7 +32,11 @@ function update(state = initialState, action) {
 				)
 			})
 			
-			return { npmPackages: npmPackages, isFetching: false }
+			return { 
+				npmPackages: npmPackages, 
+				selectedPackage: state.selectedPackage, 
+				isFetching: false 
+			}
 
 		default:
 			return state

@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router'
 import styles from './Header.css'
 
-module.exports = function Header() {
+function Header() {
   return (
     <header>
       <div className={styles.header}>
 
-        <Link to="/">Home </Link>
-        <Link to="/packages">Packages </Link>
+        <Link className={styles.dark} to="/">Home </Link>
+        <Link className={styles.light} to="/packages">Packages </Link>
 
         <div className={styles.wrapper}>
           <div className={styles.react}>
@@ -17,15 +17,9 @@ module.exports = function Header() {
           </div>
         </div>
 
-        <p className={styles.description}>
-          Search for any react components on npm... 
-          make sure you include the 
-          <code className={styles.dark}>react-component</code>
-          keyword in your 
-          <code className={styles.light}>package.json</code>
-        </p>
-
       </div>
     </header>
   )
 }
+
+export default Header

@@ -1,15 +1,21 @@
-import React from 'react'
-import styles from './Footer.css'
+import React, { Component, PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './Footer.css';
 
-module.exports = function Footer() {
-  return (
-  	<div className={styles.footer}>
-      <div className={styles.group}>
-        <span>made with </span>
-        <span className={styles.icon}>
-          <i className='fa fa-1x fa-heart' />
-        </span>
-      </div>
-    </div>
-  )
+class Footer extends Component {
+
+  render () {
+    return (
+    	<div styleName='footer'>
+    		<span>made with </span>
+    		<div styleName='heart'></div>
+    	</div>
+    )
+  }
+
+  constructor (props) {
+    super(props)
+  }
 }
+
+export default CSSModules(Footer, styles, {allowMultiple: true} )

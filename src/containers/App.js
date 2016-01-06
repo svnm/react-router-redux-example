@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 function App({ pushPath, children }) {
   return (
@@ -23,4 +23,4 @@ function App({ pushPath, children }) {
 
 module.exports = connect(
   null
-)(App);
+)(App)
