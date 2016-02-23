@@ -1,14 +1,18 @@
-# [redux-simple-router-example](https://github.com/StevenIseki/redux-simple-router-example)
+# [react-router-redux-example](https://github.com/StevenIseki/react-router-redux-example)
 
-![](https://raw.githubusercontent.com/StevenIseki/redux-simple-router-example/master/screenshot.png)
+![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/master/screenshot.png)
 
 ## Dependencies
 
-* **react** `0.14.2`
-* **redux** `3.0.4`
-* **redux logger** `2.3.1`
-* **redux simple router** `1.0.2`
-* **react router** `1.0.0`
+* **react** `0.14.7`
+* **react-css-modules** `3.6.1`
+* **react-dom** `0.14.7`
+* **react-redux** `4.3.0`
+* **react-router** `2.0.0`
+* **react-router-redux** `3.0.0`
+* **redux** `3.2.1`
+* **redux-logger** `2.3.1`
+* **redux-thunk** `1.0.3`
 * **babel** `6.1.0`
 * **webpack** `1.12.6`
 * **webpack-dev-middleware** `2.0.0`
@@ -16,7 +20,6 @@
 * **post-css** `0.7.0`
 * **autoprefixer** `6.1.0`
 * **isomorphic-fetch** `2.2.0`
-* **css modules**
 
 and most importantly **Nothing else...** okay **marked** for showing some markdown and **request** to make an API call
 

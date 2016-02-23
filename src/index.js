@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute } from 'react-router'
-import { createHistory } from 'history'
-import { syncReduxAndRouter, routeReducer } from 'redux-simple-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+
 import reducers from './reducers'
 
-/* container route components */
+/* container components */
 import Package from './containers/Package'
 import Packages from './containers/Packages'
 import Home from './containers/Home'
@@ -18,9 +18,16 @@ import App from './containers/App'
 /* reducer */
 const reducer = combineReducers(
   Object.assign(
-    {}, reducers, { routing: routeReducer}
+    {}, reducers, { routing: routerReducer}
   )
 );
+
+/*
+const reducer = combineReducers({
+  ...reducers,
+  routing: routerReducer
+})
+*/
 
 /* logger */
 const loggerMiddleware = createLogger()
@@ -36,13 +43,12 @@ let initialState = undefined
 const store = createStoreWithMiddleware(reducer, initialState)
 
 /* history */
-const history = createHistory()
-
-/* redux simple router */
-syncReduxAndRouter(history, store)
+const history = syncHistoryWithStore(browserHistory, store)
 
 /* generic styles */
 import styles from './styles/base.css'
+import normalize from './styles/normalize.css'
+Object.assign(styles, normalize)
 
 /* routes... */
 
@@ -59,5 +65,5 @@ ReactDOM.render(
       </Router>
     </div>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('mount')
 )
