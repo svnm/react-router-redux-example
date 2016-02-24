@@ -1,14 +1,14 @@
 .header {
   position: fixed;
   top: 0px;
-  height: 280px;
+  height: 200px;
   width: 100%;
-  background-color: #ddd;
+  background-color: aliceblue;
   text-align: center;
 }
 
 .dark {
-  color: #444;
+  color: #eee;
   background-color: #61dafb;
   display: inline-block;
   width: 50%;
@@ -17,13 +17,13 @@
 }
 
 .dark:hover  {
-  color: #444;
+  color: #ddd;
   background-color: #61dafb;
 }
 
 .light {
   color: #61dafb;
-  background-color: #444;
+  background-color: #eee;
   display: inline-block;
   width: 50%;
   padding-top: 20px;
@@ -32,7 +32,7 @@
 
 .light:hover {
   color: #61dafb;
-  background-color: #444;
+  background-color: #ddd;
 }
 
 /* react spinning logo */

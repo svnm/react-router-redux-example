@@ -21,8 +21,6 @@
 * **autoprefixer** `6.1.0`
 * **isomorphic-fetch** `2.2.0`
 
-and most importantly **Nothing else...** okay **marked** for showing some markdown and **request** to make an API call
-
 ## Run
 
 ```

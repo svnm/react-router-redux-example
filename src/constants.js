@@ -1,4 +1,3 @@
-
 module.exports = {
   FETCH_PACKAGE: 'FETCH_PACKAGE',
   RECEIVE_PACKAGE: 'RECEIVE_PACKAGE',

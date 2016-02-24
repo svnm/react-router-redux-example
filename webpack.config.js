@@ -6,11 +6,11 @@ const config = require('./package').config;
 
 module.exports = {
   devtool: 'inline-source-map',
-  entry: ['./client.js'],
+  entry: './client.js',
   output: {
-    filename: 'bundle.js',
     path: path.join(__dirname, 'public'),
-    publicPath: '/public/'
+    filename: 'bundle.js',
+    publicPath: '/__build__/'
   },
   module: {
     loaders: [
@@ -26,7 +26,7 @@ module.exports = {
     autoprefixer({ browsers: ['last 2 versions'] }) 
   ],
   plugins: [
-    new ExtractTextPlugin('style.css', { allChunks: true })
+    new ExtractTextPlugin('style.css', { allChunks: true }),
   ]
 
-};
+}

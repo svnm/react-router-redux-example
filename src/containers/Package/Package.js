@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
-import { fetchPackage } from '../actions/packages'
-import Loader from '../components/Loader'
-import PackageItem from '../components/PackageItem'
+import { fetchPackage } from '../../actions/npmPackage'
 import styles from './Package.css'
+import Loader from '../../components/Loader/Loader'
+import PackageItem from '../../components/PackageItem/PackageItem'
+import { isEmpty } from '../../utils'
 
 class Package extends Component {
 
@@ -23,17 +24,17 @@ class Package extends Component {
 
   render () {
 
-    const { npmPackages, selectedPackage } = this.props
+    const { npmPackage } = this.props
     let packageItem = null
     let loader = <Loader />
 
-    if(selectedPackage === undefined || !Object.keys(selectedPackage).length ){
+    if( isEmpty(npmPackage) ){
       /* npm package not loaded yet... */
 
     } else {
       /* npm package has loaded... */
       loader = null
-      packageItem = <PackageItem item={selectedPackage} />
+      packageItem = <PackageItem item={npmPackage} />
     }
 
     return (
@@ -48,8 +49,7 @@ class Package extends Component {
 function mapStateToProps(state) {
   console.log(state)
   return { 
-    selectedPackage: state.packages.selectedPackage, 
-    npmPackages: state.packages.npmPackages 
+    npmPackage: state.npmPackage
   }
 }
 

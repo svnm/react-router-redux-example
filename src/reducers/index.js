@@ -1,3 +1,2 @@
-import packages from './packages'
-
-module.exports = { packages }
+export npmPackages from './npmPackages'
+export npmPackage from './npmPackage'

@@ -1,19 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import { fetchPackages } from '../actions/packages'
-import Loader from '../components/Loader'
-import styles from './Packages.css'
+import { fetchPackages } from '../../actions/npmPackages'
+import styles from './Home.css'
+import Loader from '../../components/Loader/Loader'
+import { isEmpty } from '../../utils'
 
-function Packages({ npmPackages, fetchPackages }) {
+function Home({ npmPackages, fetchPackages }) {
 
   let packagesList = null 
   let loader = <Loader />
 
-  if(npmPackages === undefined || !npmPackages.length){
+  if( isEmpty(npmPackages) ) {
 
-    /* fetch npm packages */
-    fetchPackages()
+    if (typeof window === 'undefined') {
+    } else {
+      fetchPackages()
+    }
 
   } else {
 
@@ -34,14 +37,13 @@ function Packages({ npmPackages, fetchPackages }) {
   }
 
   return (
-    <div className={styles.packages}>
+    <div className={styles.home}>
 
       <div className={styles.row}>
         <h3 className={styles.title}>Select your react package...</h3>
       </div>
 
       { loader }
-
       <div className={styles.list}>
         <ul>      
           { packagesList }
@@ -49,10 +51,10 @@ function Packages({ npmPackages, fetchPackages }) {
       </div>
 
     </div>
-  );
-};
+  )
+}
 
 export default connect(
-  state => ({ npmPackages: state.packages.npmPackages }),
+  state => ({ npmPackages: state.npmPackages.packages }),
   { fetchPackages }
-)(Packages);
+)(Home)

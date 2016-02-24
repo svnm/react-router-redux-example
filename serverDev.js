@@ -1,70 +1,26 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack.config.dev');
-var request = require("request");
+var webpackConfig = require('./webpack.config.dev');
+var config = require('./package').config;
 
 var app = express();
-var compiler = webpack(config);
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
+/* api endpoints */
+
+const npmPackages = require('./src/api/routes/npmPackages')
+app.use('/api/npmPackages', npmPackages)
+
+const npmPackage = require('./src/api/routes/npmPackage')
+app.use('/api/npmPackage', npmPackage)
+
+
+app.use(require('webpack-dev-middleware')(webpack(webpackConfig), {
+  publicPath: webpackConfig.output.publicPath,
+  stats: { colors: true }
 }));
 
 app.use('/public', express.static(__dirname + '/public'))
-
-
-/* get all packages by keyword */
-app.get('/api/packages', function(req, res) {
-
-  var keyword = req.param('keyword');
-
-	var registryUrl = 'https://registry.npmjs.org',
-      dlCountUrl    = 'https://api.npmjs.org/downloads/point/last-week';
-      viewsPath     = '-/_view',
-      keywordView   = 'byKeyword';
-
-  var query         = 'startkey=["' + keyword + '"]' 
-      query        += '&endkey=["' + keyword + '",{}]'
-      query        += '&group_level=3'
-
-  var url = [registryUrl, viewsPath, keywordView].join('/') + '?' + query
-
-	request(url, function (error, response, body) {
-
-		if (!error) {
-		} else {
-			console.log("We’ve encountered an error: " + error);
-		}
-
-		res.json({ 
-  		  packages: JSON.parse(body)
-  		})
-	});
-});
-
-
-/* get an npm package */
-app.get('/api/package', function(req, res) {
-
-  var package = req.param('package');
-  var registryUrl = 'https://registry.npmjs.org';
-  var url = [registryUrl, package].join('/');
-
-  request(url, function (error, response, body) {
-
-    if (!error) {
-    } else {
-      console.log("We’ve encountered an error: " + error);
-    }
-
-  	res.json({ 
-  		package: JSON.parse(body)
-  	})
-
-  });
-});
 
 
 app.get('*', function(req, res) {
@@ -72,10 +28,11 @@ app.get('*', function(req, res) {
 });
 
 
-app.listen(3000, 'localhost', function(err) {
+app.listen(config.port, 'localhost', function (err) {
   if (err) {
     console.log(err);
     return;
   }
-  console.log('Listening at http://127.0.0.1:3000');
-});
+
+  console.log(`listening on port: ${config.port}`)
+})

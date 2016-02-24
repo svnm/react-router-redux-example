@@ -1,34 +1,20 @@
 {
   "name": "react-router-redux-example",
-  "version": "1.0.0",
-  "description": "just an example of using redux and react router...",
-  "scripts": {
-    "start": "node serverDev.js"
-  },
-  "author": "Steven Iseki <stevenisekimartin@gmail.com>",
+  "version": "0.0.0",
   "license": "MIT",
-  "devDependencies": {
-    "autoprefixer": "^6.1.0",
-    "babel-core": "^6.1.21",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-transform-object-assign": "^6.1.18",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18",
-    "babel-preset-stage-0": "^6.1.18",
-    "css-loader": "^0.15.1",
-    "express": "^4.13.3",
-    "extract-text-webpack-plugin": "^0.9.1",
-    "postcss-loader": "^0.7.0",
-    "redux-devtools": "^2.1.5",
-    "style-loader": "^0.13.0",
-    "webpack": "^1.12.6",
-    "webpack-dev-middleware": "^1.2.0"
+  "scripts": {
+    "start": "node server.js",
+    "start:c": "node serverDev.js"
   },
+  "config": {
+    "css": "[name]_[local]__[hash:base64:5]",
+    "port": 3000
+  },  
   "dependencies": {
+    "css-modules-require-hook": "^3.0.0-beta",
     "isomorphic-fetch": "^2.2.0",
     "marked": "^0.3.5",
     "react": "^0.14.7",
-    "react-css-modules": "^3.6.1",
     "react-dom": "^0.14.7",
     "react-redux": "^4.3.0",
     "react-router": "^2.0.0",
@@ -36,6 +22,25 @@
     "redux": "^3.2.1",
     "redux-logger": "^2.3.1",
     "redux-thunk": "^1.0.3",
-    "request": "^2.61.0"
+    "request": "^2.61.0",
+    "serialize-javascript": "^1.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.1.0",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-webpack-loaders": "^0.3.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.3.13",
+    "babel-register": "^6.5.2",
+    "css-loader": "^0.21.0",
+    "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "postcss-loader": "^0.7.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.5.1"
   }
 }
