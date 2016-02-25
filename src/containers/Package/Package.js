@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchPackage } from '../../actions/npmPackage'
 import styles from './Package.css'
@@ -8,18 +8,16 @@ import { isEmpty } from '../../utils'
 
 class Package extends Component {
 
+  static fetchData({ params, store, url }) {
+    return store.dispatch( fetchPackage(url, params.name) )
+  }
+
   constructor (props) {
     super(props)
-    this.fetchPackage = this.fetchPackage.bind(this)
   }
 
   componentDidMount () {
-    /* fetch the npm package */
-    this.fetchPackage(this.props.params.name)
-  }
-
-  fetchPackage (name) {
-    this.props.dispatch(fetchPackage(name))    
+    this.props.dispatch(fetchPackage(location.origin, this.props.params.name))
   }
 
   render () {
@@ -30,7 +28,6 @@ class Package extends Component {
 
     if( isEmpty(npmPackage) ){
       /* npm package not loaded yet... */
-
     } else {
       /* npm package has loaded... */
       loader = null

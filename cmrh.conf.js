@@ -1,5 +1,3 @@
-const config = require('./package').config;
-
 module.exports = {
-  generateScopedName: config.css,
+  generateScopedName: '[name]_[local]__[hash:base64:5]',
 };

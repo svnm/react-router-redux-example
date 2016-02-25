@@ -1,15 +1,15 @@
 {
   "name": "react-router-redux-example",
-  "version": "0.0.0",
+  "description": "react-router-redux example with universal rendering",
+  "version": "1.0.0",
   "license": "MIT",
+  "author": "Steven Iseki <stevenisekimartin@gmail.com>",
   "scripts": {
-    "start": "node server.js",
-    "start:c": "node serverDev.js"
+    "build": "npm run clean && webpack --config webpack.config.js",
+    "clean": "rm public/bundle.js && rm public/style.css && rm public/vendor.js || true",
+    "start:prod": "NODE_ENV=prod node server.js",
+    "start:dev": "NODE_ENV=dev node server.js"
   },
-  "config": {
-    "css": "[name]_[local]__[hash:base64:5]",
-    "port": 3000
-  },  
   "dependencies": {
     "css-modules-require-hook": "^3.0.0-beta",
     "isomorphic-fetch": "^2.2.0",
@@ -20,7 +20,6 @@
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.0",
     "redux": "^3.2.1",
-    "redux-logger": "^2.3.1",
     "redux-thunk": "^1.0.3",
     "request": "^2.61.0",
     "serialize-javascript": "^1.1.2"
@@ -30,7 +29,6 @@
     "babel-cli": "^6.5.1",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.2",
-    "babel-plugin-webpack-loaders": "^0.3.6",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-1": "^6.3.13",

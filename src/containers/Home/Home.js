@@ -1,60 +1,65 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchPackages } from '../../actions/npmPackages'
 import styles from './Home.css'
 import Loader from '../../components/Loader/Loader'
 import { isEmpty } from '../../utils'
+import { Link } from 'react-router'
 
-function Home({ npmPackages, fetchPackages }) {
+class Home extends Component {
 
-  let packagesList = null 
-  let loader = <Loader />
-
-  if( isEmpty(npmPackages) ) {
-
-    if (typeof window === 'undefined') {
-    } else {
-      fetchPackages()
-    }
-
-  } else {
-
-    /* npm packages have loaded... */
-    loader = null
-
-    packagesList = (
-      npmPackages.map(function (p) { 
-        return (
-          <li key={p.id}>
-            <Link to={`/package/${p.id}/${p.name}`}>
-              <p className={styles.name}>{p.name}</p>
-            </Link>
-          </li>
-        )
-      })
-    )
+  static fetchData({ params, store, url }) {
+    return store.dispatch( fetchPackages(url) )
   }
 
-  return (
-    <div className={styles.home}>
+  constructor (props) {
+    super(props)
+  }
 
-      <div className={styles.row}>
-        <h3 className={styles.title}>Select your react package...</h3>
+  componentDidMount () {
+    this.props.dispatch(fetchPackages(location.origin))
+  }
+
+  render () {
+
+    const { npmPackages } = this.props
+    let loader = <Loader />
+    let packages = null
+
+    if( isEmpty(npmPackages) ){
+      /* npm packages not loaded yet... */
+    } else {
+      loader = null
+
+      packages = (
+        npmPackages.map(function (p) { 
+          return (
+            <li key={p.id}>
+              <Link to={`/package/${p.id}/${p.name}`}>
+                <p className={styles.name}>{p.name}</p>
+              </Link>
+            </li>
+          )
+        })
+      )
+    }
+
+    return (
+      <div className={styles.home}>
+        { loader }
+        <div className={styles.list}>
+          <ul>{ packages }</ul>
+        </div>
       </div>
-
-      { loader }
-      <div className={styles.list}>
-        <ul>      
-          { packagesList }
-        </ul>
-      </div>
-
-    </div>
-  )
+    )
+  }
 }
 
-export default connect(
-  state => ({ npmPackages: state.npmPackages.packages }),
-  { fetchPackages }
-)(Home)
+function mapStateToProps(state) {
+  console.log(state)
+  return { 
+    npmPackages: state.npmPackages.packages
+  }
+}
+
+export default connect(mapStateToProps)(Home)

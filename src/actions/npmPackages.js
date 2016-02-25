@@ -1,9 +1,9 @@
 import fetch from 'isomorphic-fetch'
 const constants = require('../constants')
 
-function fetchPackages() {
+function fetchPackages(url) {
   return dispatch => {
-    return fetch(location.origin + '/api/npmPackages?keyword=react-component')
+    return fetch(url + '/api/npmPackages?keyword=react-component')
       .then(req => req.json())
       .then(json => dispatch(receivePackages(json)))
   }

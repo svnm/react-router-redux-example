@@ -1,9 +1,9 @@
 import fetch from 'isomorphic-fetch'
 const constants = require('../constants')
 
-function fetchPackage(name) {
+function fetchPackage(url, name) {
   return dispatch => {
-    return fetch(location.origin + '/api/npmPackage?npmPackage=' + name)
+    return fetch(url + '/api/npmPackage?npmPackage=' + name )
       .then(req => req.json())
       .then(json => dispatch(receivePackage(json)))
   }

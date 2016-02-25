@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const config = require('./package').config;
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -18,7 +17,7 @@ module.exports = {
       {
         test: /\.css$/i,
         loader: ExtractTextPlugin.extract('style',
-          `css?modules&localIdentName=${config.css}!postcss`),
+          `css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss`),
       }
     ]
   },

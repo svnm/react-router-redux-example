@@ -1,10 +1,10 @@
-var path = require('path');
-var express = require('express');
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.dev');
-var config = require('./package').config;
+import path from 'path'
+import express from 'express'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackConfig from './webpack.config.dev'
 
-var app = express();
+const app = express();
 
 /* api endpoints */
 
@@ -14,8 +14,7 @@ app.use('/api/npmPackages', npmPackages)
 const npmPackage = require('./src/api/routes/npmPackage')
 app.use('/api/npmPackage', npmPackage)
 
-
-app.use(require('webpack-dev-middleware')(webpack(webpackConfig), {
+app.use(webpackDevMiddleware(webpack(webpackConfig), {
   publicPath: webpackConfig.output.publicPath,
   stats: { colors: true }
 }));
@@ -28,11 +27,11 @@ app.get('*', function(req, res) {
 });
 
 
-app.listen(config.port, 'localhost', function (err) {
+app.listen(3000, 'localhost', function (err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log(`listening on port: ${config.port}`)
+  console.log('listening on http://127.0.0.1:3000')
 })

@@ -2,10 +2,11 @@
 
 ![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/master/screenshot.png)
 
+react-router-redux example with universal rendering and css modules, which was a bit tricky to implement, but easy enough now thanks to css-modules-require-hook
+
 ## Dependencies
 
 * **react** `0.14.7`
-* **react-css-modules** `3.6.1`
 * **react-dom** `0.14.7`
 * **react-redux** `4.3.0`
 * **react-router** `2.0.0`
@@ -18,24 +19,30 @@
 * **webpack-dev-middleware** `2.0.0`
 * **express** `4.13.3`
 * **post-css** `0.7.0`
+* **css-modules-require-hook** `3.0.0`
 * **autoprefixer** `6.1.0`
 * **isomorphic-fetch** `2.2.0`
 
-## Run
+## Run Dev
+
+* webpack dev server, client side only, no server rendering
 
 ```
 npm install
-npm start
+npm run start:dev
 open http://127.0.0.1:3000
 ```
 
-## Functions vs React components
+## Run Prod
 
-For this example I mixed and matched between using functions and react components, 
+* Universal rendering with react-redux-router and Express
 
-e.g. [Footer](https://github.com/StevenIseki/redux-simple-router-example/blob/master/src/components/Footer.js) is a react component, [Header](https://github.com/StevenIseki/redux-simple-router-example/blob/master/src/components/Header.js) is just a function. 
-
-This was just to show the difference in the approach. In a real app you might have a consistent approach maybe using functions for the containers which connect to redux, and react components for the dumb components making use of react-css-modules... It is up to you, you can mix and match like I did in the example if you like I guess too.
+```
+npm install
+npm run build
+npm run start:prod
+open http://127.0.0.1:3000
+```
 
 ## License
 
