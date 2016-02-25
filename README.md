@@ -1,8 +1,9 @@
 # [react-router-redux-example](https://github.com/StevenIseki/react-router-redux-example)
 
+
 ![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/master/public/screenshot.png)
 
-react-router-redux example with universal rendering and css modules, which was a bit tricky to implement, but easy enough now thanks to css-modules-require-hook
+
 
 ## Dependencies
 
