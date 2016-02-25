@@ -49,8 +49,6 @@ app.use(function (req, res) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
 
-      console.log('ey')
-
       /* call static fetchData on the container component */
       fetchData().then( ()=> {
         store = configureStore(memoryHistory, store.getState() )
