@@ -1,7 +1,7 @@
 {
   "name": "react-router-redux-example",
   "description": "react-router-redux example with universal rendering",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Steven Iseki <stevenisekimartin@gmail.com>",
   "repository": {
