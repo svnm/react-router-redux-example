@@ -26,6 +26,7 @@
     "redux": "^3.2.1",
     "redux-thunk": "^1.0.3",
     "request": "^2.61.0",
+    "scroll-behavior": "^0.3.2",
     "serialize-javascript": "^1.1.2"
   },
   "devDependencies": {
