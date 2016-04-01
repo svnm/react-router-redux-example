@@ -13,7 +13,7 @@ function getPackage(packageName, cb) {
 
 router.get('/', function(req, res) {
 
-  var packageName = req.param('npmPackage')
+  var packageName = req.query['npmPackage'] || ''
   getPackage(packageName, function (error, response, body) {
 
     if (error) {

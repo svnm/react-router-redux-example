@@ -8,7 +8,7 @@ function getPackages(keyword, cb) {
   var dlCountUrl    = 'https://api.npmjs.org/downloads/point/last-week';
   var viewsPath     = '-/_view';
   var keywordView   = 'byKeyword';
-  var query         = 'startkey=["' + keyword + '"]' 
+  var query         = 'startkey=["' + keyword + '"]'
       query        += '&endkey=["' + keyword + '",{}]'
       query        += '&group_level=3'
 
@@ -22,7 +22,7 @@ function getPackages(keyword, cb) {
 
 router.get('/', function(req, res) {
 
-  var keyword = req.param('keyword');
+  var keyword = req.query['keyword'] || '';
 
   getPackages(keyword, function (error, response, body) {
 
