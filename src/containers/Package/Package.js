@@ -16,6 +16,18 @@ class Package extends Component {
     super(props)
   }
 
+  componentWillMount () {
+    this.setState({
+      loading: true
+    })
+  }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      loading: !isEmpty(nextProps.params.npmPackage)
+    })
+  }
+
   componentDidMount () {
     this.props.dispatch(fetchPackage(location.origin, this.props.params.name))
   }
@@ -23,16 +35,9 @@ class Package extends Component {
   render () {
 
     const { npmPackage } = this.props
-    let packageItem = null
-    let loader = <Loader />
-
-    if( isEmpty(npmPackage) ){
-      /* npm package not loaded yet... */
-    } else {
-      /* npm package has loaded... */
-      loader = null
-      packageItem = <PackageItem item={npmPackage} />
-    }
+    let loading = this.state.loading
+    let packageItem = loading ? null : <PackageItem item={npmPackage} />
+    let loader = loading ? <Loader /> : null
 
     return (
       <div className={styles.package}>
@@ -45,7 +50,7 @@ class Package extends Component {
 
 function mapStateToProps(state) {
   console.log(state)
-  return { 
+  return {
     npmPackage: state.npmPackage
   }
 }
