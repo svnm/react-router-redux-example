@@ -36,7 +36,7 @@ const HTML = ({ content, store }) => (
 
 app.use(function (req, res) {
 
-  const memoryHistory = createMemoryHistory(req.path)    
+  const memoryHistory = createMemoryHistory(req.path)
   let store = configureStore(memoryHistory )
   const history = syncHistoryWithStore(memoryHistory, store)
 
@@ -58,6 +58,9 @@ app.use(function (req, res) {
           </Provider>
         )
         res.send('<!doctype html>\n' + renderToString(<HTML content={content} store={store}/>))
+      }).catch(function (error) {
+        /* do something with error */
+        console.log(error.stack);
       });
 
       /* fetch data promise */
