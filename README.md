@@ -7,22 +7,13 @@
 
 ## Dependencies
 
-* **react** `0.14.7`
-* **react-dom** `0.14.7`
-* **react-redux** `4.3.0`
-* **react-router** `2.0.0`
-* **react-router-redux** `3.0.0`
-* **redux** `3.2.1`
-* **redux-logger** `2.3.1`
-* **redux-thunk** `1.0.3`
-* **babel** `6.1.0`
-* **webpack** `1.12.6`
-* **webpack-dev-middleware** `2.0.0`
-* **express** `4.13.3`
-* **post-css** `0.7.0`
-* **css-modules-require-hook** `3.0.0`
-* **autoprefixer** `6.1.0`
-* **isomorphic-fetch** `2.2.0`
+* **react** `15.0.1`
+* **react-dom** `15.0.1`
+* **react-redux** `4.4.5`
+* **react-router** `2.3.0`
+* **react-router-redux** `4.0.2`
+* **redux** `3.5.1`
+* **redux-thunk** `2.0.1`
 
 ## Run Dev
 
