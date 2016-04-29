@@ -49,7 +49,6 @@ class Package extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
   return {
     npmPackage: state.npmPackage
   }
