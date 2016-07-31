@@ -32,7 +32,7 @@ class Home extends Component {
       loader = null
 
       packages = (
-        npmPackages.map(function (p) { 
+        npmPackages.map(function (p) {
           return (
             <li key={p.id}>
               <Link to={`/package/${p.id}/${p.name}`}>
@@ -57,7 +57,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   console.log(state)
-  return { 
+  return {
     npmPackages: state.npmPackages.packages
   }
 }

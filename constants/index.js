@@ -1,0 +1,7 @@
+export const INIT = 'INIT'
+export const RECEIVE_ENTITIES = 'RECEIVE_ENTITIES'
+export const FETCH_PKG = 'FETCH_PKG'
+export const RECEIVE_PKG = 'RECEIVE_PKG'
+export const FETCH_PACKAGES = 'FETCH_PACKAGES'
+export const RECEIVE_PACKAGES = 'RECEIVE_PACKAGES'
+export const RECEIVE_FETCHING = 'RECEIVE_FETCHING'

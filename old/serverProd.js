@@ -11,16 +11,8 @@ import routes from './src/routes'
 const app = express()
 app.use('/public', express.static(__dirname + '/public'))
 
-/* Add headers */
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5050');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
-
 /* api endpoints */
+
 import npmPackages from './src/api/routes/npmPackages'
 app.use('/api/npmPackages', npmPackages)
 
@@ -41,7 +33,9 @@ const HTML = ({ content, store }) => (
   </html>
 )
 
+
 app.use(function (req, res) {
+
   const memoryHistory = createMemoryHistory(req.path)
   let store = configureStore(memoryHistory )
   const history = syncHistoryWithStore(memoryHistory, store)
@@ -65,6 +59,7 @@ app.use(function (req, res) {
         )
         res.send('<!doctype html>\n' + renderToString(<HTML content={content} store={store}/>))
       }).catch(function (error) {
+        /* do something with error */
         console.log(error.stack);
       });
 
