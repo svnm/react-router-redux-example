@@ -6,6 +6,9 @@ import PkgCard from '../components/PkgCard'
 @connect(packagesSelector)
 export default class Packages extends Component {
 
+  static fetchData({ params, store, url }) {
+  }
+
   render() {
     const { entities, fetching } = this.props
 

@@ -4,11 +4,12 @@ import { fetchPackages } from '../actions'
 import CSSModules from 'react-css-modules'
 import SiteSidebar from '../components/SiteSidebar'
 import styles from './App.css'
+import { getSiteUrl } from '../utils/site'
 
 const mapDispatchToProps = dispatch => {
   return {
     actions: {
-      fetchPackages: (keyword) => dispatch(fetchPackages(keyword)),
+      fetchPackages: (keyword) => dispatch(fetchPackages(getSiteUrl(), keyword)),
     }
   }
 }
@@ -17,8 +18,8 @@ const mapDispatchToProps = dispatch => {
 @CSSModules(styles)
 export default class App extends Component {
 
-  constructor(props) {
-    super(props)
+  static fetchData({ params, store, url }) {
+    return store.dispatch( fetchPackages(url, params.keyword) )
   }
 
   componentDidMount() {
