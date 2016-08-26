@@ -1,11 +1,11 @@
 import { createSelector } from 'reselect'
 
 export const pkgSelector = createSelector(
-  state => state.pkg,
+  state => state.pkg.entity,
   state => state.ui.fetching,
-  (pkg, fetching) => {
+  (entity, fetching) => {
     return {
-      pkg,
+      entity,
       fetching
     }
   }

@@ -1,8 +1,9 @@
 const constants = require('../constants')
 
-export function receivePackages(entities) {
+export function receivePackages(entities, keyword) {
   return {
     type: constants.RECEIVE_PACKAGES,
-    entities
+    entities,
+    keyword
   }
 }

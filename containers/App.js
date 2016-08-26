@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { init, toggleMenu } from '../actions'
+import { fetchPackages } from '../actions'
 import CSSModules from 'react-css-modules'
 import SiteSidebar from '../components/SiteSidebar'
 import styles from './App.css'
@@ -8,7 +8,7 @@ import styles from './App.css'
 const mapDispatchToProps = dispatch => {
   return {
     actions: {
-      init: () => dispatch(init())
+      fetchPackages: (keyword) => dispatch(fetchPackages(keyword)),
     }
   }
 }
@@ -21,9 +21,15 @@ export default class App extends Component {
     super(props)
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    const { actions, params } = this.props
+    actions.fetchPackages(params.keyword)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    const { params } = nextProps
     const { actions } = this.props
-    actions.init()
+    actions.fetchPackages(params.keyword)
   }
 
   render() {

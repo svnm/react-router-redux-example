@@ -6,28 +6,29 @@ import useScroll from 'scroll-behavior/lib/useStandardScroll'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
+import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 import createLogger from 'redux-logger'
 import routes from './routes'
 import * as reducers from './reducers'
 import * as actions from './actions'
 import styles from './styles/'
 
-if(process.env.NODE_ENV === 'production') ga.initialize(process.env.GOOGLE_ANALYTICS_CODE)
-
 const logger = createLogger({
   predicate: (getState, action) => action.type !== 'FETCHING'
 })
 
 const reducer = combineReducers({
-   ...reducers
+  ...reducers,
+  routing: routerReducer
 })
 
 const store = createStore(reducer, applyMiddleware(thunk, logger))
 const scrollHistory = useScroll(() => browserHistory)()
+const history = syncHistoryWithStore(scrollHistory, store)
 
 render(
   <Provider store={store}>
-    <Router history={scrollHistory} routes={routes} />
+    <Router history={history} routes={routes} />
   </Provider>,
   document.getElementById('root')
 )

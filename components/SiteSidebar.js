@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import styles from './SiteSidebar.css'
 import CSSModules from 'react-css-modules'
-import { sidebarSelector } from '../selectors'
 import map from 'lodash/map'
 import { connect } from 'react-redux'
 
-@connect(sidebarSelector, null)
 @CSSModules(styles, { allowMultiple: true })
 export default class SiteSidebar extends Component {
 
@@ -14,8 +12,9 @@ export default class SiteSidebar extends Component {
     const { fetching } = this.props
 
     const links = [
-      { to: '/packages', text: 'Packages', fetching: fetching['packages'] },
-      { to: '/packages/cssmodules', text: 'CSS Modules', fetching: fetching['packages'] }
+      { to: '/packages/react', text: 'React Components' },
+      { to: '/packages/deku', text: 'Deku Components' },
+      { to: '/packages/css', text: 'CSS Modules' }
     ]
 
     return (
