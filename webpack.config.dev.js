@@ -1,19 +1,29 @@
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const postcssCssnext = require('postcss-cssnext')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
-  entry: ['./client.js'],
+  entry: {
+    app: './index'
+  },
   output: {
-    filename: 'bundle.js',
     path: path.join(__dirname, 'public'),
-    publicPath: '/public/'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.js$/,
+        loader: 'babel', exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015', 'stage-0'],
+          plugins: ['transform-runtime', 'transform-decorators-legacy']
+        }
+      },
       {
         test: /\.css$/i,
         loader: ExtractTextPlugin.extract('style',
@@ -21,11 +31,11 @@ module.exports = {
       }
     ]
   },
-  postcss: [ 
-    autoprefixer({ browsers: ['last 2 versions'] }) 
-  ],
+  postcss: [ postcssCssnext({ browsers: ['last 2 versions'] }) ],
+  devServer: { historyApiFallback: true },
   plugins: [
-    new ExtractTextPlugin('style.css', { allChunks: true })
+    new ExtractTextPlugin('style.css', { allChunks: true }),
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"dev"' }),
+    new HtmlWebpackPlugin({ title: 'Example', template: './index.html' })
   ]
-
-};
+}

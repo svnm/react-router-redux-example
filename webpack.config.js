@@ -1,20 +1,18 @@
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const postcssCssnext = require('postcss-cssnext')
 
 module.exports = {
   entry: {
-    app: './client',
+    app: './index',
     vendor: [
-      'isomorphic-fetch',
       'react',
       'react-dom',
       'react-redux',
       'react-router',
       'react-router-redux',
-      'redux',
-      'redux-thunk'
+      'redux'
     ]
   },
   output: {
@@ -24,23 +22,26 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.js$/,
+        loader: 'babel', exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015', 'stage-0'],
+          plugins: ['transform-runtime', 'transform-decorators-legacy']
+        }
+      },
       {
         test: /\.css$/i,
-        loader: ExtractTextPlugin.extract('style',
-          `css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss`),
+        loader: ExtractTextPlugin.extract('style', `css?modules&localIdentName=[name]_[local]__[hash:base64:5]!postcss`),
       }
     ]
   },
-  postcss: [ 
-    autoprefixer({ browsers: ['last 2 versions'] }) 
-  ],
+  postcss: [ postcssCssnext({ browsers: ['last 2 versions'] }) ],
   plugins: [
     new ExtractTextPlugin('style.css', { allChunks: true }),
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"prod"' }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true}),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
   ]
-
 }

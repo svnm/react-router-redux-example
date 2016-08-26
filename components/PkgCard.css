@@ -1,0 +1,59 @@
+.Card {
+  width: 20%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1920px) {
+  .Card { width: 25%; }
+}
+
+@media (max-width: 1600px) {
+  .Card { width: 33%; }
+}
+
+@media (max-width: 1280px) {
+  .Card { width: 50%; }
+}
+
+@media (max-width: 960px) {
+  .Card { width: 100%; }
+}
+
+.Inner {
+  background: black;
+  position: relative;
+  flex: 1;
+  height: 31rem;
+}
+
+.Pkg {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  padding: 1rem 2.5rem 0rem;
+  position: relative;
+  top: 0px;
+}
+
+.Title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: 3.5rem;
+  overflow: hidden;
+  max-height: 30rem;
+  transition: 300ms max-height;
+}
+
+.Logo {
+  float: left;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-size: contain;
+}
