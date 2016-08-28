@@ -2,7 +2,13 @@
 
 ![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/master/public/screenshot.png)
 
-A complete and minimal react-router-redux example including reselect, hot reloading, server rendering css modules, cssnext and testing with enzyme.
+A complete and minimal react-router-redux example
+
+- latest version of react, redux, reselect and react-router
+- hot reloading with webpack dev server
+- Universal/ Isomorphic server rendering
+- css modules and cssnext
+- testing with enzyme.
 
 ## Dependencies
 
@@ -42,10 +48,10 @@ open http://127.0.0.1:3000
 
 ## TODO
 
-improve the testing with enzyme
-component search
-mitrhil components
-nicer styles
+improve the testing with enzyme,
+component search,
+mitrhil components,
+nicer styles,
 docs
 
 ## License
