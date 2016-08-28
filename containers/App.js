@@ -4,7 +4,7 @@ import { fetchPackages } from '../actions'
 import CSSModules from 'react-css-modules'
 import SiteSidebar from '../components/SiteSidebar'
 import styles from './App.css'
-import { getSiteUrl } from '../utils/site'
+import { getSiteUrl } from '../lib/site'
 
 const mapDispatchToProps = dispatch => {
   return {

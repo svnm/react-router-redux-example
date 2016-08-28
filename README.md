@@ -6,12 +6,12 @@ A complete and minimal react-router-redux example including reselect, hot reload
 
 ## Dependencies
 
-* **react** `15.0.1`
+* **react** `15.3.1`
 * **react-redux** `4.4.5`
-* **react-router** `2.3.0`
+* **react-router** `2.7.0`
 * **react-router-redux** `4.0.5`
-* **redux** `3.5.1`
-* **reselect** `2.4.0`
+* **redux** `3.5.2`
+* **reselect** `2.5.2`
 
 ## Run Dev
 

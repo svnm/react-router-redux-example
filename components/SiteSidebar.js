@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import styles from './SiteSidebar.css'
 import CSSModules from 'react-css-modules'
 import { connect } from 'react-redux'
-import { windowUndefined } from '../utils/window'
+import { windowUndefined } from '../lib/window'
 
 @CSSModules(styles, { allowMultiple: true })
 export default class SiteSidebar extends Component {

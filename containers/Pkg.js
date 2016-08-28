@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { pkgSelector } from '../selectors'
 import PkgDetails from '../components/PkgDetails'
 import { fetchPkg } from '../actions'
-import { getSiteUrl } from '../utils/site'
+import { getSiteUrl } from '../lib/site'
 
 const mapDispatchToProps = dispatch => {
   return {

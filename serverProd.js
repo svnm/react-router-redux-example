@@ -9,7 +9,7 @@ import { createMemoryHistory, match, RouterContext } from 'react-router'
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 import routes from './routes'
 import * as reducers from './reducers'
-import { getSiteUrl } from './utils/site'
+import { getSiteUrl } from './lib/site'
 
 const app = express()
 app.use('/public', express.static(__dirname + '/public'))
