@@ -34,11 +34,19 @@ npm run prod
 open http://127.0.0.1:3000
 ```
 
+## Versions
+
+- [Version 1](https://github.com/StevenIseki/react-router-redux-example/tree/v1) was a little simpler not using reselect, no testing and using react v14
+
+- [Version 2](https://github.com/StevenIseki/react-router-redux-example) is the current version with reselect, react v15 and a sidebar for different component types to search from npm.
+
 ## TODO
 
 improve the testing with enzyme
+component search
+mitrhil components
 nicer styles
-some docs
+docs
 
 ## License
 

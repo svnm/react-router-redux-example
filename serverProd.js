@@ -7,9 +7,9 @@ import thunkMiddleware from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { createMemoryHistory, match, RouterContext } from 'react-router'
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
-import routes from './routes'
-import * as reducers from './reducers'
-import { getSiteUrl } from './lib/site'
+import routes from './src/routes'
+import * as reducers from './src/reducers'
+import { getSiteUrl } from './src/lib/site'
 
 const app = express()
 app.use('/public', express.static(__dirname + '/public'))
@@ -25,10 +25,10 @@ app.use(function (req, res, next) {
 
 /* api endpoints */
 
-const npmPackages = require('./api/routes/npmPackages')
+const npmPackages = require('./src/api/routes/npmPackages')
 app.use('/api/npmPackages', npmPackages)
 
-const npmPackage = require('./api/routes/npmPackage')
+const npmPackage = require('./src/api/routes/npmPackage')
 app.use('/api/npmPackage', npmPackage)
 
 /* configure store */

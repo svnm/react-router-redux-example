@@ -14,10 +14,10 @@ app.use(function (req, res, next) {
 
 /* api endpoints */
 
-const npmPackages = require('./api/routes/npmPackages')
+const npmPackages = require('./src/api/routes/npmPackages')
 app.use('/api/npmPackages', npmPackages)
 
-const npmPackage = require('./api/routes/npmPackage')
+const npmPackage = require('./src/api/routes/npmPackage')
 app.use('/api/npmPackage', npmPackage)
 
 app.listen(3000, 'localhost', function (err) {
