@@ -26,6 +26,7 @@
   position: relative;
   flex: 1;
   height: 31rem;
+  filter: contrast(4);
 }
 
 .Pkg {

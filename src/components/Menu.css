@@ -1,0 +1,21 @@
+.Menu {
+  cursor: pointer;
+  position: fixed;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  background: #444;
+  border-radius: 50%;
+  bottom: 2rem;
+  right: -5rem;
+  transition: all 350ms ease-in-out;
+}
+.Menu svg {
+  fill: #fff;
+  transform: scale(0.6);
+}
+
+@media (min-width: 480px) {
+  .Menu {
+    display: none;
+  }
+}
