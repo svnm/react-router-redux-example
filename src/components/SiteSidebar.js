@@ -29,7 +29,12 @@ export default class SiteSidebar extends Component {
 
     return (
       <div styleName='SiteSidebar' className={open ? 'Open' : ''}>
-        <Link styleName='Label' to='/'>Componentzzz</Link>
+
+        <div styleName='Logo'>
+          <img styleName='LogoImage' src='http://i.imgur.com/79JhCaq.png' />
+          <Link styleName='LogoLabel' to='/'>Componentzzz</Link>
+        </div>
+
         <div>
           {
             links.map( (link, i) => {

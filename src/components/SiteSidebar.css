@@ -32,13 +32,6 @@
   }
 }
 
-.Label {
-  color: #fff;
-  font-size: 2rem;
-  margin: 2rem;
-  font-weight: bold;
-}
-
 .Link {
   display: flex;
   align-items: center;
@@ -56,4 +49,22 @@
 
 .LinkText {
   flex: 1;
+}
+
+.Logo {
+  cursor: pointer;
+  display: flex;
+}
+
+.LogoLabel {
+  color: #fff;
+  font-size: 2rem;
+  margin: 2.4rem 0;
+  font-weight: bold;
+}
+
+.LogoImage {
+  width: 6rem;
+  height: 6rem;
+  margin: 1rem;
 }
