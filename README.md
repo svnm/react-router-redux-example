@@ -2,7 +2,7 @@
 
 ![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/master/public/screenshot.png)
 
-A complete and minimal react-router-redux example
+## A complete and minimal react-router-redux example
 
 - latest version of react, redux, reselect and react-router
 - hot reloading with webpack dev server
