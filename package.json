@@ -4,9 +4,9 @@
   "version": "1.0.4",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && webpack --config webpack.config.js",
+    "build": "npm run clean && NODE_ENV=prod webpack",
     "clean": "rm public/bundle.js && rm public/style.css && rm public/vendor.js || true",
-    "dev": "NODE_ENV=dev node server.js | webpack-dev-server --config webpack.config.dev.js --port 5000 --inline --hot",
+    "dev": "NODE_ENV=dev node server.js | NODE_ENV=dev webpack-dev-server --port 5000 --inline --hot",
     "test": "NODE_ENV=dev tape src/tests/index.js",
     "prod": "NODE_ENV=prod node server.js"
   },
