@@ -1,8 +1,7 @@
 # [react-router-redux-example](https://github.com/StevenIseki/react-router-redux-example)
 
 
-![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/master/public/screenshot.png)
-
+![](https://raw.githubusercontent.com/StevenIseki/react-router-redux-example/v1/public/screenshot.png)
 
 
 ## Dependencies
