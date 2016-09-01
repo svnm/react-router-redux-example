@@ -53,7 +53,7 @@ npm test
 
 - [Version 1](https://github.com/StevenIseki/react-router-redux-example/tree/v1) was a little simpler not using reselect, no testing and using react v14
 
-- [Version 2](https://github.com/StevenIseki/react-router-redux-example) is the current version with reselect, react v15 and a sidebar for different component types to search from npm.
+- [Version 2](https://github.com/StevenIseki/react-router-redux-example) is the current version with reselect, react v15 and a sidebar for different component types
 
 
 ## License
