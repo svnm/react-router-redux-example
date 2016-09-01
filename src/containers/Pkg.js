@@ -4,6 +4,7 @@ import { pkgSelector } from '../selectors'
 import PkgDetails from '../components/PkgDetails'
 import { fetchPkg } from '../actions'
 import { getSiteUrl } from '../lib/site'
+import Loader from '../components/Loader'
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -31,7 +32,7 @@ export default class Pkg extends Component {
     return (
       <div className='List'>
         <div className='Row'>
-        <PkgDetails pkg={entity} />
+          { fetching ? <Loader /> : <PkgDetails pkg={entity} /> }
         </div>
       </div>
     )

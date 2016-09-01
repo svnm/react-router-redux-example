@@ -1,0 +1,83 @@
+.loader {
+  position: relative;
+  top: 100px;
+  left: 50%;
+  width: 7.33333em;
+  height: 7.33333em;
+  margin-left: -3.66667em;
+  margin-top: -3.66667em;
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  width: 2em;
+  height: 2em;
+  background: #fdfdfd;
+  animation: show 0.88s step-end infinite alternate, pulse 0.88s linear infinite alternate;
+}
+
+.block:nth-child(1) {
+  transform: translate(0, 0);
+  animation-delay: 0.065s;
+}
+
+.block:nth-child(2) {
+  transform: translate(2.66667em, 0);
+  animation-delay: 0.13s;
+}
+
+.block:nth-child(3) {
+  transform: translate(5.33333em, 0);
+  animation-delay: 0.195s;
+}
+
+.block:nth-child(4) {
+  transform: translate(0, 2.66667em);
+  animation-delay: 0.325s;
+}
+
+.block:nth-child(5) {
+  transform: translate(2.66667em, 2.66667em);
+  animation-delay: 0.13s;
+}
+
+.block:nth-child(6) {
+  transform: translate(5.33333em, 2.66667em);
+  animation-delay: 0.455s;
+}
+
+.block:nth-child(7) {
+  transform: translate(0, 5.33333em);
+  animation-delay: 0.39s;
+}
+
+.block:nth-child(8) {
+  transform: translate(2.66667em, 5.33333em);
+  animation-delay: 0.26s;
+}
+
+.block:nth-child(9) {
+  transform: translate(5.33333em, 5.33333em);
+}
+
+@keyframes pulse {
+  from,
+  40% {
+    background: #fdfdfd;
+  }
+  to {
+    background: #dadada;
+  }
+}
+@keyframes show {
+  from, 40% {
+    opacity: 0;
+  }
+  41%, to {
+    opacity: 1;
+  }
+}
