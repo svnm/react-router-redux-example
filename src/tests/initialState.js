@@ -1,16 +1,14 @@
 export const initialState = {
-  meta: {
-    moviesMeta: [],
-    reviewsMeta: []
+  pkg: {
+    entity: {}
   },
-  entities: {
-    movies: {},
-    reviews: {}
+  packages: {
+    entities: []
   },
   ui: {
     fetching: {
-      movies: true,
-      reviews: true
+      pkg: true,
+      packages: true
     }
   }
 }

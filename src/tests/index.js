@@ -2,16 +2,16 @@ require('css-modules-require-hook/preset');
 require('babel-register');
 
 /* components */
-//require('./components/Visit.spec.js');
+require('./components/Loader.spec.js');
+require('./components/Menu.spec.js');
+require('./components/PkgDetails.spec.js');
+require('./components/PkgCard.spec.js');
 
 /* actions */
-require('./actions/fetchMovies.spec.js');
-require('./actions/fetchReviews.spec.js');
-require('./actions/receiveEntities.spec.js');
-require('./actions/receiveFetching.spec.js');
-require('./actions/receiveMeta.spec.js');
+require('./actions/fetchPackages.spec.js');
+require('./actions/fetchPkg.spec.js');
 
 /* reducers */
 require('./reducers/ui.spec.js');
-require('./reducers/entities.spec.js');
-require('./reducers/meta.spec.js');
+require('./reducers/packages.spec.js');
+require('./reducers/pkg.spec.js');

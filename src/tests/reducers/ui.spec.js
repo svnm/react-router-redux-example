@@ -12,9 +12,9 @@ test('ui reducer', (t) => {
   )
 
   t.deepEqual(
-    ui([], { type: 'RECEIVE_FETCHING', obj: { feed: false } } ),
-    { fetching: { feed: false } },
-    'RECEIVE_FETCHING should update fetching for the feed... '
+    ui([], { type: 'RECEIVE_FETCHING', obj: { pkg: false } } ),
+    { fetching: { pkg: false } },
+    'RECEIVE_FETCHING should update fetching for a package... '
   )
 
   t.end()
