@@ -10,7 +10,8 @@ function plugins() {
     return [
       new ExtractTextPlugin('style.css', { allChunks: true }),
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({minimize: true}),
+      new webpack.DefinePlugin({ 'process.env':{ 'NODE_ENV': JSON.stringify('production')} }),
+      new webpack.optimize.UglifyJsPlugin({ minimize: true, compress: { warnings: false } }),
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     ]
   }
@@ -63,9 +64,12 @@ function output() {
   }
 }
 
+var devtool = 'inline-source-map'
+if(env === 'prod'){ devtool = 'hidden-sourcemap' }
+
 /* config */
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: devtool,
   entry: entry(),
   output: output(),
   module: { loaders: loaders() },
