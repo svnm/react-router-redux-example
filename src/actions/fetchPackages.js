@@ -1,6 +1,6 @@
 import * as constants from '../constants'
-import api from '../lib/request'
 import * as actions from './'
+import fetch from 'isomorphic-fetch'
 
 const COMPONENTS = ['deku', 'react']
 const MODULES = ['css']
@@ -11,10 +11,15 @@ export function fetchPackages(url, keyword) {
     let kw = 'react-component'
     if(COMPONENTS.includes(keyword)) { kw = `${keyword}-component` }
     if(MODULES.includes(keyword)) { kw = `${keyword}-modules` }
-    api.get( url +  `/api/npmPackages?keyword=${kw}`).end().then(res => {
-      const { body } = res
-      dispatch(actions.receivePackages(body.npmPackages, keyword))
-      dispatch(actions.receiveFetching({ packages: false }))
-    })
+
+    fetch(url +  `/api/npmPackages?keyword=${kw}`)
+      .then( res => {
+        if (res.status >= 400) { throw new Error("Error in response from server") }
+        return res.json()
+      })
+      .then( res => {
+        dispatch(actions.receivePackages(res.npmPackages, keyword))
+        dispatch(actions.receiveFetching({ packages: false }))
+      })
   }
 }
